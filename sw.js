@@ -1,29 +1,25 @@
-// sw.js - Полный и правильный код для PWA на Android
-// Устанавливается сразу, активируется мгновенно, отвечает на fetch
+const CACHE_NAME = 'hermes-v1';
+const urlsToCache = [
+  '/Hermes-Management-and-Consulting-App/index.html',
+  '/Hermes-Management-and-Consulting-App/icon-192x192.png',
+  '/Hermes-Management-and-Consulting-App/icon-512x512.png'
+];
 
 self.addEventListener('install', (event) => {
-  console.log('[SW] Installing...');
-  // Принудительно пропускаем ожидание и активируем сразу
+  event.waitUntil(
+    caches.open(CACHE_NAME).then((cache) => cache.addAll(urlsToCache))
+  );
   self.skipWaiting();
 });
 
-self.addEventListener('activate', (event) {
-  console.log('[SW] Activating...');
-  // Захватываем управление всеми открытыми вкладками
+self.addEventListener('activate', (event) => {
   event.waitUntil(self.clients.claim());
 });
 
 self.addEventListener('fetch', (event) => {
-  // Android требует обязательный обработчик fetch
-  // Просто пробрасываем запрос на сервер
   event.respondWith(
-    fetch(event.request)
-      .catch(() => {
-        // Если офлайн — возвращаем заглушку
-        return new Response(
-          '<h1>Нет соединения</h1><p>Проверьте интернет и откройте приложение снова.</p>',
-          { headers: { 'Content-Type': 'text/html' } }
-        );
-      })
+    caches.match(event.request).then((response) => {
+      return response || fetch(event.request);
+    })
   );
 });
