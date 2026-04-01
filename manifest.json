@@ -3,13 +3,13 @@
   "name": "Hermes Management and Consulting",
   "icons": [
     {
-      "src": "icon-192x192.png",
+      "src": "/Hermes-Management-and-Consulting-App/icon-192x192.png",
       "type": "image/png",
       "sizes": "192x192",
       "purpose": "any"
     },
     {
-      "src": "icon-512x512.png",
+      "src": "/Hermes-Management-and-Consulting-App/icon-512x512.png",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "maskable"
