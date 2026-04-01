@@ -6,10 +6,10 @@
     <title>Hermes Management & Consulting</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap&subset=greek" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700;800&display=swap&subset=greek" rel="stylesheet">
     
     <!-- PWA -->
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="./manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Hermes MC">
@@ -17,6 +17,76 @@
     <meta name="theme-color" content="#c17b5a">
     
     <style>
+        /* ========== МАКСИМАЛЬНЫЙ BOLD ДЛЯ ВСЕХ ТЕКСТОВ НА ВСЕХ ЯЗЫКАХ ========== */
+        * {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+        
+        /* ВСЕ текстовые элементы — максимальный bold 800 */
+        body, h1, h2, h3, h4, h5, h6, p, span, div, button, a, li, .text, 
+        .logo h1, .logo span, .epigraph p, .epigraph small, .hero h2, .hero p, 
+        .service-card h3, .service-card p, .service-tag, .creative-card h3, 
+        .art-link, .contact-item, footer span, .nav-btn, .big-btn, .install-note,
+        .tooltip-text, .pwa-icon-btn span, .contact-section h2, .video-section h3,
+        .video-card a, .video-card span, .order-card p, .art-showcase p,
+        .culinary-features .feature-item span, .close-btn {
+            font-weight: 800 !important;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+            -webkit-text-stroke: 0.3px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Усиление контраста для всего текста */
+        body, .section, main, .hero, .service-card, .creative-card, .contact-section {
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
+        }
+        
+        /* Текст на светлом фоне с полупрозрачностью — дополнительное затемнение */
+        .hero p, .service-card p, .creative-card p, .epigraph p, .epigraph small {
+            color: #2a2a2a;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Заголовки на полупрозрачном фоне */
+        .hero h2, .service-card h3, .creative-card h3, .contact-section h2 {
+            color: #2c3e2a;
+            text-shadow: 0 1px 3px rgba(255, 255, 255, 0.6);
+        }
+        
+        /* Контактная информация */
+        .contact-item {
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+        }
+        
+        /* Кнопки */
+        .big-btn, .art-link, .nav-btn {
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Текст в эпиграфе */
+        .epigraph p {
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 0.5px rgba(193, 123, 90, 0.5);
+            color: #b56a48;
+        }
+        
+        /* Греческий язык — дополнительное усиление */
+        body.lang-el * {
+            font-weight: 800 !important;
+            -webkit-text-stroke: 0.4px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Мобильная адаптация */
+        @media (max-width: 800px) {
+            body, p, span, li, div, button, a {
+                font-weight: 800 !important;
+                -webkit-text-stroke: 0.4px rgba(0, 0, 0, 0.12);
+            }
+        }
+        /* ========== КОНЕЦ ДОБАВЛЕННОГО ========== */
+        
         * {
             margin: 0;
             padding: 0;
@@ -57,14 +127,12 @@
         }
         .logo h1 {
             font-size: 2.8rem;
-            font-weight: 800;
             letter-spacing: 1px;
             color: #c17b5a;
             line-height: 1.2;
             text-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         .logo span {
-            font-weight: 700;
             font-size: 1.4rem;
             color: #b8a89a;
             letter-spacing: 0.5px;
@@ -102,7 +170,6 @@
             background: none;
             border: none;
             font-size: 1.2rem;
-            font-weight: 600;
             color: #5f4e47;
             cursor: pointer;
             padding: 0.5rem 1rem;
@@ -154,8 +221,6 @@
         .epigraph p {
             font-size: 1.8rem;
             color: #c17b5a;
-            font-weight: 700;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.1);
             letter-spacing: 0.5px;
         }
         .epigraph small {
@@ -163,8 +228,6 @@
             color: #c17b5a;
             display: block;
             margin-top: 0.5rem;
-            font-weight: 700;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
         }
         .hero {
             text-align: center;
@@ -176,18 +239,14 @@
         }
         .hero h2 {
             font-size: 3rem;
-            font-weight: 700;
             color: #4a3f3a;
             margin-bottom: 1rem;
-            text-shadow: 0 1px 3px rgba(255,255,255,0.5);
         }
         .hero p {
             font-size: 1.4rem;
             color: #7f6e64;
             max-width: 600px;
             margin: 0 auto 2rem;
-            font-weight: 700;
-            text-shadow: 0 1px 3px rgba(255,255,255,0.3);
         }
         .services-grid {
             display: grid;
@@ -211,17 +270,13 @@
         }
         .service-card h3 {
             font-size: 1.8rem;
-            font-weight: 700;
             color: #c17b5a;
             margin-bottom: 1rem;
-            text-shadow: 0 1px 2px rgba(255,255,255,0.3);
         }
         .service-card p {
             color: #6d5c53;
             margin-bottom: 1.5rem;
-            font-weight: 700;
             font-size: 1.3rem;
-            text-shadow: 0 1px 2px rgba(255,255,255,0.3);
         }
         .service-tag {
             display: inline-block;
@@ -230,7 +285,6 @@
             border-radius: 40px;
             font-size: 1.1rem;
             color: #c17b5a;
-            font-weight: 700;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
         .video-card {
@@ -254,20 +308,16 @@
         }
         .video-card a {
             color: #3a2c2a;
-            font-weight: 700;
             font-size: 1.2rem;
             text-decoration: none;
             border-bottom: 1px dotted;
-            text-shadow: 0 1px 2px rgba(255,255,255,0.5);
         }
         .video-section {
             margin-top: 3rem;
         }
         .video-section h3 {
             color: #c17b5a;
-            font-weight: 700;
             font-size: 1.6rem;
-            text-shadow: 0 1px 3px rgba(255,255,255,0.3);
         }
         .creative-cards {
             display: grid;
@@ -286,7 +336,6 @@
             font-size: 2rem;
             color: #c17b5a;
             margin-bottom: 1rem;
-            font-weight: 700;
             text-align: center;
         }
 
@@ -316,7 +365,6 @@
             justify-content: center;
             text-align: center;
             color: #3a2c2a;
-            font-weight: 700;
             font-size: 1.2rem;
             padding: 0.5rem;
             background-color: #f0e4d8;
@@ -387,7 +435,6 @@
             padding: 0.8rem 2rem;
             border-radius: 40px;
             text-decoration: none;
-            font-weight: 700;
             font-size: 1.2rem;
             transition: background 0.3s;
             border: 1px solid rgba(255,255,255,0.3);
@@ -408,7 +455,6 @@
         }
         .order-card p {
             font-size: 1.2rem;
-            font-weight: 600;
             margin-bottom: 1rem;
             color: #3a2c2a;
         }
@@ -424,7 +470,6 @@
             box-shadow: 0 10px 20px rgba(193, 123, 90, 0.3);
             display: inline-block;
             margin: 0.5rem;
-            font-weight: 700;
             text-decoration: none;
         }
         .big-btn:hover {
@@ -470,7 +515,6 @@
             padding: 1.5rem 3rem;
             border-radius: 80px;
             font-size: 2rem;
-            font-weight: 700;
             color: #3a2c2a;
             text-align: center;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
@@ -566,7 +610,6 @@
         .contact-item {
             font-size: 1.3rem;
             color: #5f4e47;
-            font-weight: 700;
             background: rgba(255,255,255,0.6);
             padding: 0.8rem 1.5rem;
             border-radius: 60px;
@@ -588,17 +631,13 @@
             background: transparent;
             border: none;
             box-shadow: none;
-            font-weight: 800;
             font-size: 1.4rem;
-            text-shadow: 0 1px 4px rgba(255,255,255,0.8);
         }
         footer {
             text-align: center;
             padding: 2rem;
             color: #b8a89a;
             font-size: 1.2rem;
-            font-weight: 800;
-            text-shadow: 0 1px 4px rgba(0,0,0,0.2);
         }
         @media (max-width: 800px) {
             header {
@@ -642,7 +681,6 @@
             transition: transform 0.2s;
             gap: 0.3rem;
             font-size: 0.9rem;
-            font-weight: 600;
             color: #2c5a3e;
         }
         .pwa-icon-btn img {
@@ -699,7 +737,6 @@
         .install-note {
             margin-top: 0.5rem;
             color: #2c2c2c;
-            font-weight: 600;
         }
         @media (max-width: 768px) {
             .tooltip-text {
@@ -883,14 +920,14 @@
         <!-- КОНТАКТЫ -->
         <section id="contact" class="section">
             <div class="contact-section">
-                <h2 style="font-size: 2.5rem; font-weight: 300; color: #c17b5a;" data-i18n="contact_title">Свяжитесь с нами</h2>
+                <h2 style="font-size: 2.5rem; color: #c17b5a;" data-i18n="contact_title">Свяжитесь с нами</h2>
                 <div class="contact-info">
                     <div class="contact-row">
                         <a href="tel:+35799453575" class="contact-item">📞 +357 99 453575</a>
                         <a href="tel:+35799486511" class="contact-item">📞 +357 99 486511</a>
                         <a href="https://wa.me/35799453575" target="_blank" class="contact-item">💬 WhatsApp +357 99 453575</a>
                         <a href="https://wa.me/35799486511" target="_blank" class="contact-item">💬 WhatsApp +357 99 486511</a>
-                        <span class="contact-item" style="background: transparent; border: none; font-weight: 800; font-size: 1.4rem; text-shadow: 0 1px 4px rgba(255,255,255,0.8);">Viber: +357 99 453575, +357 99 486511</span>
+                        <span class="contact-item" style="background: transparent; border: none; font-size: 1.4rem;">Viber: +357 99 453575, +357 99 486511</span>
                     </div>
                     <div class="contact-row">
                         <a href="mailto:gavrosh2007@gmail.com" class="contact-item">✉️ gavrosh2007@gmail.com</a>
@@ -903,7 +940,7 @@
                         <a href="https://t.me/RBartsalonBot" target="_blank" class="contact-item">🤖 @RBartsalonBot</a>
                     </div>
                 </div>
-                <p style="margin-top: 2rem; color: #7f6e64; font-size: 1.3rem; font-weight: 700; text-shadow: 0 1px 3px rgba(255,255,255,0.5);" data-i18n="contact_note">Мы открыты для диалога и новых проектов.</p>
+                <p style="margin-top: 2rem; color: #7f6e64; font-size: 1.3rem;" data-i18n="contact_note">Мы открыты для диалога и новых проектов.</p>
             </div>
         </section>
     </main>
@@ -962,7 +999,7 @@
         <div id="doc-tax2-ua"><div class="doc-text"><h2 style="color:#c17b5a;">Статус NON-Dom на Кіпрі</h2><p><strong>Визначення:</strong> NON-Dom (недоміцильований) — особа, яка не вважається постійним резидентом Кіпру і не має там свого постійного місця проживання.</p><p><strong>Податкові пільги:</strong><br>- Звільнення від податків на іноземний дохід: NON-Dom зазвичай звільняються від податків на дохід, отриманий за межами Кіпру.<br>- Відсутність податку на приріст капіталу: немає податку на приріст капіталу від продажу акцій та інших цінних паперів.<br>- Низькі податкові ставки: дохід, отриманий на Кіпрі, може оподатковуватися за нижчими ставками.</p><p><strong>Право на отримання:</strong> Щоб претендувати на статус NON-Dom, особа не повинна бути податковим резидентом Кіпру щонайменше 17 з останніх 20 років до подання заяви.</p><p><strong>Переваги для іноземців:</strong> Іноземці можуть скористатися сприятливим податковим режимом Кіпру, що робить його привабливим напрямком для експатріантів та міжнародних інвесторів.</p><p><strong>Переваги для кіпріотів:</strong> Кіпріоти, які жили за кордоном і повернулися, також можуть подати заяву на статус NON-Dom за умови дотримання критеріїв.</p><p><strong>Висновок:</strong> Статус NON-Dom на Кіпрі пропонує значні податкові переваги, що робить його привабливим як для іноземних громадян, так і для кіпріотів, які повертаються. Важливо проконсультуватися з податковим консультантом або юристом, щоб розібратися в деталях та забезпечити дотримання місцевих законів.</p><p><strong>Податкові ставки для осіб зі статусом NON-Dom:</strong><br>Ставки податку на доходи:<br>0% на дохід до €19 500.<br>20% на дохід від €19 501 до €28 000.<br>25% на дохід від €28 001 до €36 300.<br>30% на дохід від €36 301 до €60 000.<br>35% на дохід понад €60 000.<br>Примітка: NON-Dom звільняються від податку на іноземний дохід, що є значною перевагою.</p><p><strong>Дивіденди та відсотки:</strong> NON-Dom не оподатковуються на дивіденди та відсотки, отримані за межами Кіпру.</p><p><strong>Податкові ставки для звичайних податкових резидентів:</strong><br>Ставки податку на доходи такі ж, як зазначено вище, для доходу, отриманого на Кіпрі. Однак звичайні податкові резиденти оподатковуються на свій загальносвітовий дохід, включаючи іноземний дохід, за тими ж прогресивними ставками.</p><p><strong>Спеціальний внесок на оборону (СВО):</strong> Звичайні податкові резиденти також можуть оподатковуватися спеціальним внеском на оборону на деякі види доходу (наприклад, дивіденди, відсотки) за ставками:<br>17% на дивіденди.<br>30% на відсотки.</p><p><strong>Резюме:</strong><br>NON-Dom: користуються відсутністю оподаткування іноземного доходу та нижчим загальним податковим навантаженням на дохід, отриманий на Кіпрі.<br>Звичайні резиденти: оподатковуються на загальносвітовий дохід, включаючи вищі ставки на дивіденди та відсотки.</p></div></div>
 
         <!-- arch1 -->
-        <div id="doc-arch1-ru"><div class="doc-text"><h2 style="color:#c17b5a;">Проект жилья между двумя пляжами и соляным озером</h2><p>Проект жилья между двумя пляжами и соляным озером с примыкающим проектами казино и гольф клуба, а так же чередой вилл для состоявшихся людей. Команда нашей компании «сломала голову» о резервное предназначенье жилья эконом класса для этого района Лимасола. Хотелось бы напомнить что кроме казино и гольф клуба, водного парка и пляжа на том же велосипедном расстоянии от проекта, благодаря новой дороге, будет находиться по направлению движения в сторону центра города последовательно: порт, еще один гостиничный комплекс (гостиничные апартаменты), яхт клуб и променад. Что же до инфраструктуры по месту проекта то рядом уже сейчас находится Молл Лимасола, кроме того, в проекте строительства казино предусмотрено строительство гостиничного комплекса и различных мест проведения досуга включая бары, рестораны и клубы. Окружающие пляжи так же славятся своими рыбными деликатесами, не говоря уже об окружающих проект садах и парниках, а так же продуктовой базе в ближайших деревнях. Скорее всего, супермаркет так же не задержится с появлением учитывая численность населения окружающих деревень и вечные прерогативы человека касательно расходов материальных средств.</p><p>Итак, первыми мыслями опционного предназначения проекта кроме просто жилья были: база для тренировки и проживания персонала казино, гостиниц и гольф клуба, дом престарелых, комплекс госучреждений, спортивная база, и т.д. Так же на велосипедном расстоянии находится центральный госпиталь Лимасола что является важной деталью в случае экстренной медицинской помощи или просто профилактики хронических болезней жителей больших городов. Рельеф же местности благодаря соляному озеру абсолютно плоский, что можно использовать для велосипедного передвижения и просто пеших прогулок всех нежелающих арендовать или покупать автомобиль.</p><p>Сейчас же возникла совершенно другая идея которая имеет потенциал стать, надеюсь успешным, стартапом. Приведу некоторые выдержки информации из соцсетей и быстро меняющейся действительности: Традиционное мерило успеха — собственные квартира и автомобиль — уже не актуально. Все большее число молодых людей по всему миру не хотят их покупать. Многочисленные исследования западных специалистов показывают, что поколение так называемых «миллениалов», т.е. людей, которым сейчас до 30-35 лет, уже редко покупают дома, а еще реже — автомобили. На самом деле, они не делают сверхдорогих покупок вообще. Если не считать айфонов, разумеется. В Америке людей в возрасте до 35 лет вообще называют «поколением арендаторов». Почему так происходит? Некоторые социологи убеждены, что это из-за того, что на долю современной молодежи приходится слишком много финансовых катаклизмов. А потому люди просто боятся брать «серьезные» кредиты. Но даже не это главное. Дело в том, что поколение современных молодых людей отличается от поколения своих отцов другими ценностями. Современная молодежь пересматривает понятие успеха. Если ранее успешными людьми считались те, кто владел собственным жильем и автомобилем, то сейчас в особом почете те, кто вкладывал деньги в опыт и впечатления: путешественники, экстремалы, стартаперы.</p><p>Обозреватель Atlantic Джеймс Гэмблин объясняет феномен так: «За последние десять лет психологи провели огромное количество исследований, доказывающих, что с точки зрения счастья и ощущения благополучия гораздо выгоднее тратить деньги на приобретение нового опыта, а не новых вещей. Это приносит больше радости». Вот выдержки из статьи Гэмблина: “Социальное взаимодействие между людьми имеет определяющее значение в вопросе, будут они счастливы или нет. Так что вы должны говорить с другими людьми и иметь много друзей. “ “Наши родители не имели возможности путешествовать так дешево и так часто, как мы. У них не было возможности развлекаться так, как сейчас развлекаемся мы. Им было не так просто начать новый бизнес, как нам.” Вот такая она, новая реальность хотим мы того или нет. Поэтому наша компания ищет реальных инвесторов которые готовы вкладывать в недвижимость в оригинальном значении слова «инвестиция» - это залог Вашего финансового благополучия и вне зависимости от того где Вы собираетесь жить в дальнейшем и чем заниматься Вы будете получать ренту от Вашей недвижимости достаточно привлекательной для упомянутого выше поколения которое уже не хочет ничего покупать кроме портативного компьютера и телефона.</p><p>Наиболее же популярным трендом использования недвижимости на сегодняшний день является коворкинг представляющий из себя аренду индивидуального места возле пляжа, обеспеченного интернетом и пропитанием. Проект нашей компании есть воплощение идеи коворкинга как по цене строительства так и по возможности насыщения ими наиболее обесцененных на сегодня мест мира так и наиболее престижных, это может быть любое любопытное с точки зрения среднестатистического потребителя местоположение типа греческих островов и Афин или Кипра, это может быть Киев или Львов, это может быть Тбилиси или Москва, Виареджио или Стамбул, Флоренция или Вена, Тель-Авив или Чикаго.</p><p>Мы готовы обеспечить места проживания и коворкинга молодых специалистов необходимой мебелью и оборудованием, насытить предметами искусства и гарантировать сервис который будет состоять в необходимом минимуме обслуживания мест проживания включая работы по обслуживанию общих территорий, уборке, обслуживании оборудования от домашней до высокотехнологичной техники необходимой для продуктивной работы специалиста. Используя наши связи и опыт, компания готова привлекать специальное оборудование и сервис для удовлетворения потребностей работающей и просто проводящей время молодежи.</p><p>Почему в первую очередь Кипр? Потому что остров обладает мягким климатом, гостеприимным и неконфликтным населением, продуманной налоговой и резидентной политикой и неплохим географическим положением что является редкостью в современном мире перенасыщенном вооруженными и иммиграционными конфликтами. Кроме того Кипр – это православная страна находящаяся на границе христианского мира что диктует толерантное отношение к любым мировым религиям. И наконец Кипр – это остров в средиземном море, достаточно небольшой чтобы можно было его объехать на велосипеде за пару месяцев пребывания необходимых для получения резидентного статуса и следующей за этим возможности избегать при желании двойного налогообложения дохода от интеллектуальной деятельности которая, кстати, на острове не просто почитаема, но и облагается чрезвычайно лояльно.</p><p>Наша компания готова организовать консультации по всем интересующим вопросам в выбранной Вами или любой другой консалтинговой, эккаунтинговой и юридической фирме острова. Экономика проекта представлена в бизнес плане и касается в первую очередь продажи проекта целиком, но мы не видим в этом никакого противоречия декларируемому направлению проекта – проект покупается либо целиком либо по любым частям, даже по половине квартиры что приносит доход инвестору в соответствии с размером его инвестиции. Ориентировочные цифры доходности инвестиции можно оценить как 10% в год. В конце представления проекта хотелось бы упомянуть о невероятном росте цены аренды в Лимасоле за последние 5 лет, что не может не внушать надежд хозяевам грамотно расположенного бюджетного жилья Кипра.</p></div></div>
+        <div id="doc-arch1-ru"><div class="doc-text"><h2 style="color:#c17b5a;">Проект жилья между двумя пляжами и соляным озером</h2><p>Проект жилья между двумя пляжами и соляным озером с примыкающим проектами казино и гольф клуба, а так же чередой вилл для состоявшихся людей. Команда нашей компании «сломала голову» о резервное предназначенье жилья эконом класса для этого района Лимасола. Хотелось бы напомнить что кроме казино и гольф клуба, водного парка и пляжа на том же велосипедном расстоянии от проекта, благодаря новой дороге, будет находиться по направлению движения в сторону центра города последовательно: порт, еще один гостиничный комплекс (гостиничные апартаменты), яхт клуб и променад. Что же до инфраструктуры по месту проекта то рядом уже сейчас находится Молл Лимасола, кроме того, в проекте строительства казино предусмотрено строительство гостиничного комплекса и различных мест проведения досуга включая бары, рестораны и клубы. Окружающие пляжи так же славятся своими рыбными деликатесами, не говоря уже об окружающих проект садах и парниках, а так же продуктовой базе в ближайших деревнях. Скорее всего, супермаркет так же не задержится с появлением учитывая численность населения окружающих деревень и вечные прерогативы человека касательно расходов материальных средств.</p><p>Итак, первыми мыслями опционного предназначения проекта кроме просто жилья были: база для тренировки и проживания персонала казино, гостиниц и гольф клуба, дом престарелых, комплекс госучреждений, спортивная база, и т.д. Так же на велосипедном расстоянии находится центральный госпиталь Лимасола что является важной деталью в случае экстренной медицинской помощи или просто профилактики хронических болезней жителей больших городов. Рельеф же местности благодаря соляному озеру абсолютно плоский, что можно использовать для велосипедного передвижения и просто пеших прогулок всех нежелающих арендовать или покупать автомобиль.</p><p>Сейчас же возникла совершенно другая идея которая имеет потенциал стать, надеюсь успешным, стартапом. Приведу некоторые выдержки информации из соцсетей и быстро меняющейся действительности: Традиционное мерило успеха — собственные квартира и автомобиль — уже не актуально. Все большее число молодых людей по всему миру не хотят их покупать. Многочисленные исследования западных специалистов показывают, что поколение так называемых «миллениалов», т.е. людей, которым сейчас до 30-35 лет, уже редко покупают дома, а еще реже — автомобили. На самом деле, они не делают сверхдорогих покупок вообще. Если не считать айфонов, разумеется. В Америке людей в возрасте до 35 лет вообще называют «поколением арендаторов». Почему так происходит? Некоторые социологи убеждены, что это из-за того, что на долю современной молодежи приходится слишком много финансовых катаклизмов. А потому люди просто боятся брать «серьезные» кредиты. Но даже не это главное. Дело в том, что поколение современных молодых людей отличается от поколения своих отцов другими ценностями. Современная молодежь пересматривает понятие успеха. Если ранее успешными людьми считались те, кто владел собственным жильем и автомобилем, то сейчас в особом почете те, кто вкладывал деньги в опыт и впечатления: путешественники, экстремалы, стартаперы.</p><p>Обозреватель Atlantic Джеймс Гэмблин объясняет феномен так: «За последние десять лет психологи провели огромное количество исследований, доказывающих, что с точки зрения счастья и ощущения благополучия гораздо выгоднее тратить деньги на приобретение нового опыта, а не новых вещей. Это приносит больше радости». Вот выдержки из статьи Гэмблина: “Социальное взаимодействие между людьми имеет определяющее значение в вопросе, будут они счастливы или нет. Так что вы должны говорить с другими людьми и иметь много друзей. “ “Наши родители не имели возможности путешествовать так дешево и так часто, как мы. У них не было возможности развлекаться так, как сейчас развлекаемся мы. Им было не так просто начать новый бизнес, как нам.” Вот такая она, новая реальность хотим мы того или нет. Поэтому наша компания ищет реальных инвесторов которые готовы вкладывать в недвижимость в оригинальном значении слова «инвестиция» - это залог Вашего финансового благополучия и вне зависимости от того где Вы собираетесь жить в дальнейшем и чем заниматься Вы будете получать ренту от Вашей недвижимости достаточно привлекательной для упомянутого выше поколения которое уже не хочет ничего покупать кроме портативного компьютера и телефона.</p><p>Наиболее же популярным трендом использования недвижимости на сегодняшний день является коворкинг представляющий из себя аренду индивидуального места возле пляжа, обеспеченного интернетом и пропитанием. Проект нашей компании есть воплощение идеи коворкинга как по цене строительства так и по возможности насыщения ими наиболее обесцененных на сегодня мест мира так и наиболее престижных, это может быть любое любопытное с точки зрения среднестатистического потребителя местоположение типа греческих островов и Афин или Кипра, это может быть Киев или Львов, это может быть Тбилиси или Москва, Виареджио или Стамбул, Флоренция или Вена, Тель-Авив или Чикаго.</p><p>Мы готовы обеспечить места проживания и коворкинга молодых специалистов необходимой мебелью и оборудованием, насытить предметами искусства и гарантировать сервис который будет состоять в необходимом минимуме обслуживания мест проживания включая работы по обслуживанию общих территорий, уборке, обслуживании оборудования от домашней до высокотехнологичной техники необходимой для продуктивной работы специалиста. Используя наши связи и опыт, компания готова привлекать специальное оборудование и сервис для удовлетворения потребностей работающей и просто проводящей время молодежи.</p><p>Почему в первую очередь Кипр? Потому что остров обладает мягким климатом, гостеприимным и неконфликтным населением, продуманной налоговой и резидентной политикой и неплохим географическим положением что является редкостью в современном мире перенасыщенном вооруженными и иммиграционными конфликтами. Кроме того Кипр – это православная страна находящаяся на границе христианского мира что диктует толерантное отношение к любым мировым религиям. И наконец Кипр – это остров в средиземном море, достаточно небольшой чтобы можно было его объехать на велосиде за пару месяцев пребывания необходимых для получения резидентного статуса и следующей за этим возможности избегать при желании двойного налогообложения дохода от интеллектуальной деятельности которая, кстати, на острове не просто почитаема, но и облагается чрезвычайно лояльно.</p><p>Наша компания готова организовать консультации по всем интересующим вопросам в выбранной Вами или любой другой консалтинговой, эккаунтинговой и юридической фирме острова. Экономика проекта представлена в бизнес плане и касается в первую очередь продажи проекта целиком, но мы не видим в этом никакого противоречия декларируемому направлению проекта – проект покупается либо целиком либо по любым частям, даже по половине квартиры что приносит доход инвестору в соответствии с размером его инвестиции. Ориентировочные цифры доходности инвестиции можно оценить как 10% в год. В конце представления проекта хотелось бы упомянуть о невероятном росте цены аренды в Лимасоле за последние 5 лет, что не может не внушать надежд хозяевам грамотно расположенного бюджетного жилья Кипра.</p></div></div>
         <div id="doc-arch1-en"><div class="doc-text"><h2 style="color:#c17b5a;">Housing project between two beaches</h2><p>The project is located between two beaches and a salt lake, adjacent to casino and golf club projects, as well as a series of villas for established people. Our team has been pondering the alternative uses of economy-class housing in this area of Limassol. In addition to the casino and golf club, water park and beach, at the same cycling distance from the project, thanks to the new road, there will be sequentially: the port, another hotel complex (hotel apartments), a yacht club and a promenade. As for the infrastructure on site, the Limassol Mall is already nearby, and the casino construction project includes the construction of a hotel complex and various leisure facilities including bars, restaurants and clubs. The surrounding beaches are also famous for their fish delicacies, not to mention the gardens and greenhouses surrounding the project, as well as the food base in the nearest villages. Most likely, a supermarket will not be long in appearing, given the population of the surrounding villages and the eternal prerogatives of man regarding the expenditure of material resources.</p><p>So, the first thoughts of the optional purpose of the project besides just housing were: a base for training and accommodation of casino, hotel and golf club staff, a nursing home, a complex of government institutions, a sports base, etc. Also within cycling distance is the Limassol General Hospital, which is an important detail in case of emergency medical care or simply prevention of chronic diseases of residents of large cities. The terrain, thanks to the salt lake, is absolutely flat, which can be used for cycling and just walking for those who do not want to rent or buy a car.</p><p>Now a completely different idea has arisen that has the potential to become, I hope, a successful startup. Here are some excerpts of information from social networks and rapidly changing reality: The traditional measure of success - owning an apartment and a car - is no longer relevant. An increasing number of young people around the world do not want to buy them. Numerous studies by Western experts show that the generation of so-called "millennials", i.e. people who are now under 30-35 years old, rarely buy houses, and even less often - cars. In fact, they do not make super-expensive purchases at all. Except for iPhones, of course. In America, people under the age of 35 are generally called the "generation of renters." Why is this happening? Some sociologists believe that this is because today's youth face too many financial cataclysms. And therefore people are simply afraid to take "serious" loans. But that's not even the main thing. The fact is that the generation of modern young people differs from the generation of their fathers in other values. Modern youth are rethinking the concept of success. If previously successful people were those who owned their own housing and car, now those who invested money in experience and impressions are especially honored: travelers, extreme sports enthusiasts, startups.</p><p>Atlantic columnist James Hamblin explains the phenomenon this way: "Over the past ten years, psychologists have conducted a huge amount of research proving that, from the point of view of happiness and a sense of well-being, it is much more profitable to spend money on acquiring new experiences, rather than new things. This brings more joy." Here are excerpts from Hamblin's article: "Social interaction between people is crucial in determining whether they will be happy or not. So you have to talk to other people and have many friends." "Our parents did not have the opportunity to travel as cheaply and as often as we do. They did not have the opportunity to have fun the way we do now. It was not so easy for them to start a new business like we do." This is the new reality, whether we want it or not. Therefore, our company is looking for real investors who are ready to invest in real estate in the original meaning of the word "investment" - this is the key to your financial well-being and regardless of where you are going to live in the future and what you do, you will receive rent from your real estate that is attractive enough for the above-mentioned generation that no longer wants to buy anything except a laptop and a phone.</p><p>The most popular trend in using real estate today is coworking, which is the rental of an individual place near the beach, provided with internet and food. Our company's project is the embodiment of the coworking idea both in terms of construction cost and the possibility of saturating them with the most depreciated places in the world today and the most prestigious ones; it can be any location interesting from the point of view of the average consumer, such as the Greek islands and Athens or Cyprus, it can be Kyiv or Lviv, it can be Tbilisi or Moscow, Viareggio or Istanbul, Florence or Vienna, Tel Aviv or Chicago.</p><p>We are ready to provide accommodation and coworking spaces for young professionals with the necessary furniture and equipment, saturate them with works of art and guarantee a service that will consist of the necessary minimum maintenance of living spaces, including work on the maintenance of common areas, cleaning, maintenance of equipment from household to high-tech equipment necessary for productive work of a specialist. Using our connections and experience, the company is ready to attract special equipment and services to meet the needs of working and simply spending time youth.</p><p>Why Cyprus first? Because the island has a mild climate, a hospitable and non-conflict population, a well-thought-out tax and residency policy and a good geographical location, which is rare in the modern world oversaturated with armed and immigration conflicts. In addition, Cyprus is an Orthodox country located on the border of the Christian world, which dictates a tolerant attitude towards any world religions. And finally, Cyprus is an island in the Mediterranean Sea, small enough to be cycled around in a couple of months of stay necessary to obtain resident status and the subsequent opportunity to avoid, if desired, double taxation of income from intellectual activity, which, by the way, on the island is not only revered, but also taxed extremely loyally.</p><p>Our company is ready to arrange consultations on all issues of interest in the consulting, accounting and law firm of your choice or any other on the island. The economics of the project are presented in the business plan and concern primarily the sale of the project as a whole, but we do not see any contradiction with the declared direction of the project - the project is purchased either as a whole or in any parts, even half an apartment, which brings income to the investor in accordance with the size of his investment. Estimated investment return figures can be estimated at 10% per annum. At the end of the presentation of the project, I would like to mention the incredible increase in rental prices in Limassol over the past 5 years, which cannot but give hope to the owners of well-located budget housing in Cyprus.</p></div></div>
         <div id="doc-arch1-el"><div class="doc-text"><h2 style="color:#c17b5a;">Σχέδιο κατοικίας ανάμεσα σε δύο παραλίες</h2><p>Το έργο βρίσκεται ανάμεσα σε δύο παραλίες και μια αλμυρή λίμνη, δίπλα σε έργα καζίνο και γκολφ, καθώς και σε μια σειρά από βίλες για καθιερωμένους ανθρώπους. Η ομάδα μας έχει προβληματιστεί για τις εναλλακτικές χρήσεις της οικονομικής κατοικίας σε αυτήν την περιοχή της Λεμεσού. Εκτός από το καζίνο και το γκολφ, το υδάτινο πάρκο και την παραλία, στην ίδια απόσταση με ποδήλατο από το έργο, χάρη στον νέο δρόμο, θα υπάρχουν διαδοχικά: το λιμάνι, ένα άλλο συγκρότημα ξενοδοχείων (διαμερίσματα ξενοδοχείου), μια μαρίνα και ένας πεζόδρομος. Όσον αφορά τις υποδομές επί τόπου, το Limassol Mall βρίσκεται ήδη κοντά, και το έργο κατασκευής καζίνο περιλαμβάνει την κατασκευή ενός συγκροτήματος ξενοδοχείων και διαφόρων χώρων αναψυχής, όπως μπαρ, εστιατόρια και κλαμπ. Οι γύρω παραλίες φημίζονται επίσης για τα ψαρικά τους, για να μην αναφέρουμε τους κήπους και τα θερμοκήπια που περιβάλλουν το έργο, καθώς και τη βάση τροφίμων στα κοντινά χωριά. Πιθανότατα, ένα σούπερ μάρκετ δεν θα αργήσει να εμφανιστεί, δεδομένου του πληθυσμού των γύρω χωριών και των αιώνιων προνομίων του ανθρώπου σχετικά με τη δαπάνη υλικών πόρων.</p><p>Έτσι, οι πρώτες σκέψεις για τον προαιρετικό σκοπό του έργου εκτός από την απλή στέγαση ήταν: μια βάση για εκπαίδευση και διαμονή του προσωπικού του καζίνο, του ξενοδοχείου και του γκολφ, ένας οίκος ευγηρίας, ένα συγκρότημα κυβερνητικών ιδρυμάτων, μια αθλητική βάση κ.λπ. Επίσης σε απόσταση με ποδήλατο βρίσκεται το Γενικό Νοσοκομείο Λεμεσού, το οποίο είναι μια σημαντική λεπτομέρεια σε περίπτωση επείγουσας ιατρικής περίθαλψης ή απλώς πρόληψης χρόνιων ασθενειών των κατοίκων μεγάλων πόλεων. Το έδαφος, χάρη στην αλμυρή λίμνη, είναι απολύτως επίπεδο, το οποίο μπορεί να χρησιμοποιηθεί για ποδήλατο και απλώς περπάτημα για όσους δεν θέλουν να νοικιάσουν ή να αγοράσουν αυτοκίνητο.</p><p>Τώρα έχει προκύψει μια εντελώς διαφορετική ιδέα που έχει τη δυνατότητα να γίνει, ελπίζω, μια επιτυχημένη startup. Ακολουθούν ορισμένα αποσπάσματα πληροφοριών από τα κοινωνικά δίκτυα και την ταχέως μεταβαλλόμενη πραγματικότητα: Το παραδοσιακό μέτρο επιτυχίας - η ιδιοκτησία ενός διαμερίσματος και ενός αυτοκινήτου - δεν είναι πλέον σχετικό. Ένας αυξανόμενος αριθμός νέων ανθρώπων σε όλο τον κόσμο δεν θέλουν να τα αγοράσουν. Πολυάριθμες μελέτες Δυτικών ειδικών δείχνουν ότι η γενιά των λεγόμενων "millennials", δηλ. άτομα που είναι τώρα κάτω των 30-35 ετών, σπάνια αγοράζουν σπίτια, και ακόμη λιγότερο συχνά - αυτοκίνητα. Στην πραγματικότητα, δεν κάνουν καθόλου υπερβολικά ακριβές αγορές. Εκτός από τα iPhones, φυσικά. Στην Αμερική, τα άτομα κάτω των 35 ετών ονομάζονται γενικά "γενιά ενοικιαστών". Γιατί συμβαίνει αυτό; Κάποιοι κοινωνιολόγοι πιστεύουν ότι αυτό συμβαίνει επειδή η σημερινή νεολαία αντιμετωπίζει πάρα πολλές οικονομικές κατακλυσμικές καταστροφές. Και επομένως οι άνθρωποι απλά φοβούνται να πάρουν "σοβαρά" δάνεια. Αλλά αυτό δεν είναι καν το κύριο πράγμα. Το γεγονός είναι ότι η γενιά των σύγχρονων νέων διαφέρει από τη γενιά των πατεράδων τους σε άλλες αξίες. Η σύγχρονη νεολαία επαναπροσδιορίζει την έννοια της επιτυχίας. Αν προηγουμένως επιτυχημένοι άνθρωποι θεωρούνταν εκείνοι που είχαν το δικό τους σπίτι και αυτοκίνητο, τώρα τιμούνται ιδιαίτερα εκείνοι που επένδυσαν χρήματα σε εμπειρίες και εντυπώσεις: ταξιδιώτες, extreme sports, startups.</p><p>Ο αρθρογράφος του Atlantic James Hamblin εξηγεί το φαινόμενο ως εξής: "Τα τελευταία δέκα χρόνια, οι ψυχολόγοι έχουν διεξαγάγει ένα τεράστιο αριθμό ερευνών που αποδεικνύουν ότι, από την άποψη της ευτυχίας και της αίσθησης ευεξίας, είναι πολύ πιο κερδοφόρο να ξοδεύεις χρήματα για την απόκτηση νέων εμπειριών, παρά για νέα πράγματα. Αυτό φέρνει περισσότερη χαρά." Ακολουθούν αποσπάσματα από το άρθρο του Hamblin: "Η κοινωνική αλληλεπίδραση μεταξύ των ανθρώπων είναι καθοριστικής σημασίας για το αν θα είναι ευτυχισμένοι ή όχι. Επομένως, πρέπει να μιλάτε με άλλους ανθρώπους και να έχετε πολλούς φίλους." "Οι γονείς μας δεν είχαν την ευκαιρία να ταξιδέψουν τόσο φθηνά και τόσο συχνά όσο εμείς. Δεν είχαν την ευκαιρία να διασκεδάσουν όπως κάνουμε εμείς τώρα. Δεν ήταν τόσο εύκολο γι 'αυτούς να ξεκινήσουν μια νέα επιχείρηση όπως εμείς." Αυτή είναι η νέα πραγματικότητα, είτε το θέλουμε είτε όχι. Επομένως, η εταιρεία μας αναζητά πραγματικούς επενδυτές που είναι έτοιμοι να επενδύσουν σε ακίνητα με την αρχική έννοια της λέξης "επένδυση" - αυτό είναι το κλειδί για την οικονομική σας ευημερία και ανεξάρτητα από το πού θα ζήσετε στο μέλλον και τι κάνετε, θα λαμβάνετε ενοίκιο από το ακίνητό σας αρκετά ελκυστικό για την προαναφερθείσα γενιά που δεν θέλει πλέον να αγοράσει τίποτα εκτός από ένα φορητό υπολογιστή και ένα τηλέφωνο.</p><p>Η πιο δημοφιλής τάση στη χρήση ακινήτων σήμερα είναι το coworking, το οποίο είναι η ενοικίαση ενός ατομικού χώρου κοντά στην παραλία, με παροχή internet και φαγητού. Το έργο της εταιρείας μας είναι η ενσάρκωση της ιδέας του coworking τόσο από άποψη κόστους κατασκευής όσο και από τη δυνατότητα κορεσμού τους με τα πιο υποτιμημένα μέρη στον κόσμο σήμερα και τα πιο διάσημα. Μπορεί να είναι οποιαδήποτε τοποθεσία ενδιαφέρουσα από την άποψη του μέσου καταναλωτή, όπως τα ελληνικά νησιά και η Αθήνα ή η Κύπρος, μπορεί να είναι το Κίεβο ή το Λβιβ, μπορεί να είναι η Τιφλίδα ή η Μόσχα, το Βιαρέτζιο ή η Κωνσταντινούπολη, η Φλωρεντία ή η Βιέννη, το Τελ Αβίβ ή το Σικάγο.</p><p>Είμαστε έτοιμοι να παρέχουμε χώρους διαμονής και συνεργασίας για νέους επαγγελματίες με τα απαραίτητα έπιπλα και εξοπλισμό, να τους κορεστούμε με έργα τέχνης και να εγγυηθούμε μια υπηρεσία που θα αποτελείται από την απαραίτητη ελάχιστη συντήρηση των χώρων διαβίωσης, συμπεριλαμβανομένων των εργασιών συντήρησης κοινόχρηστων χώρων, καθαρισμού, συντήρησης εξοπλισμού από οικιακό έως υψηλής τεχνολογίας εξοπλισμό απαραίτητο για παραγωγική εργασία ενός ειδικού. Χρησιμοποιώντας τις συνδέσεις και την εμπειρία μας, η εταιρεία είναι έτοιμη να προσελκύσει ειδικό εξοπλισμό και υπηρεσίες για να καλύψει τις ανάγκες της εργαζόμενης νεολαίας που απλά περνάει την ώρα της.</p><p>Γιατί πρώτα η Κύπρος; Επειδή το νησί έχει ήπιο κλίμα, φιλόξενο και μη συγκρουσιακό πληθυσμό, μια καλά μελετημένη φορολογική πολιτική και πολιτική διαμονής και μια καλή γεωγραφική θέση, που είναι σπάνια στον σύγχρονο κόσμο που είναι υπερκορεσμένος με ένοπλες και μεταναστευτικές συγκρούσεις. Επιπλέον, η Κύπρος είναι μια ορθόδοξη χώρα που βρίσκεται στα σύνορα του χριστιανικού κόσμου, η οποία υπαγορεύει μια ανεκτική στάση απέναντι σε οποιεσδήποτε παγκόσμιες θρησκείες. Και τέλος, η Κύπρος είναι ένα νησί στη Μεσόγειο Θάλασσα, αρκετά μικρό για να το γυρίσει κανείς με ποδήλατο σε μερικούς μήνες παραμονής που είναι απαραίτητοι για να αποκτήσει καθεστώς κατοίκου και την επακόλουθη ευκαιρία να αποφύγει, εάν το επιθυμεί, τη διπλή φορολογία εισοδήματος από πνευματική δραστηριότητα, η οποία, παρεμπιπτόντως, στο νησί όχι μόνο είναι σεβαστή, αλλά φορολογείται και εξαιρετικά πιστά.</p><p>Η εταιρεία μας είναι έτοιμη να κανονίσει διαβουλεύσεις για όλα τα θέματα ενδιαφέροντος στην εταιρεία συμβούλων, λογιστών και δικηγόρων της επιλογής σας ή οποιαδήποτε άλλη στο νησί. Τα οικονομικά του έργου παρουσιάζονται στο επιχειρηματικό σχέδιο και αφορούν κυρίως την πώληση του έργου στο σύνολό του, αλλά δεν βλέπουμε καμία αντίφαση με τη δηλωθείσα κατεύθυνση του έργου - το έργο αγοράζεται είτε στο σύνολό του είτε σε οποιαδήποτε μέρη, ακόμη και μισό διαμέρισμα, το οποίο αποφέρει εισόδημα στον επενδυτή ανάλογα με το μέγεθος της επένδυσής του. Τα εκτιμώμενα ποσοστά απόδοσης επένδυσης μπορούν να εκτιμηθούν σε 10% ετησίως. Στο τέλος της παρουσίασης του έργου, θα ήθελα να αναφέρω την απίστευτη αύξηση των τιμών ενοικίασης στη Λεμεσό τα τελευταία 5 χρόνια, η οποία δεν μπορεί παρά να δώσει ελπίδα στους ιδιοκτήτες καλά τοποθετημένων οικονομικών κατοικιών στην Κύπρο.</p></div></div>
         <div id="doc-arch1-ua"><div class="doc-text"><h2 style="color:#c17b5a;">Проект житла між двома пляжами</h2><p>Проект розташований між двома пляжами та солоним озером, поруч із проектами казино та гольф-клубу, а також низкою вілл для заможних людей. Наша команда розмірковувала над альтернативним використанням економ-житла в цьому районі Лімасола. На додаток до казино та гольф-клубу, аквапарку та пляжу, на такій же велосипедній відстані від проекту, завдяки новій дорозі, будуть послідовно: порт, ще один готельний комплекс (готельні апартаменти), яхт-клуб та променад. Що стосується інфраструктури на місці, то поруч вже є Limassol Mall, а проект будівництва казино передбачає будівництво готельного комплексу та різноманітних розважальних закладів, включаючи бари, ресторани та клуби. Навколишні пляжі також славляться своїми рибними делікатесами, не кажучи вже про сади та теплиці навколо проекту, а також про продуктову базу в найближчих селах. Швидше за все, супермаркет не забариться з'явитися, враховуючи населення навколишніх сіл і вічні прерогативи людини щодо витрат матеріальних ресурсів.</p><p>Отже, першими думками щодо альтернативного призначення проекту, окрім просто житла, були: база для тренувань та проживання персоналу казино, готелів та гольф-клубу, будинок престарілих, комплекс державних установ, спортивна база тощо. Також на велосипедній відстані знаходиться Лімасольська загальна лікарня, що є важливою деталлю у разі екстреної медичної допомоги або просто профілактики хронічних захворювань мешканців великих міст. Рельєф місцевості, завдяки солоному озеру, абсолютно рівний, що можна використовувати для їзди на велосипеді та просто прогулянок для тих, хто не бажає орендувати або купувати автомобіль.</p><p>Тепер виникла зовсім інша ідея, яка, сподіваюся, має потенціал стати успішним стартапом. Ось деякі витяги з інформації із соціальних мереж та реальності, що швидко змінюється: Традиційне мірило успіху – власна квартира та автомобіль – вже не актуальне. Дедалі більше молодих людей у всьому світі не хочуть їх купувати. Численні дослідження західних експертів показують, що покоління так званих «міленіалів», тобто людей, яким зараз до 30-35 років, рідко купують будинки, а ще рідше – автомобілі. Насправді вони взагалі не роблять наддорогих покупок. Крім айфонів, звісно. В Америці людей віком до 35 років взагалі називають «поколінням орендарів». Чому так відбувається? Деякі соціологи вважають, що це тому, що на частку сучасної молоді припадає надто багато фінансових катаклізмів. І тому люди просто бояться брати «серйозні» кредити. Але це навіть не головне. Справа в тому, що покоління сучасних молодих людей відрізняється від покоління своїх батьків іншими цінностями. Сучасна молодь переглядає поняття успіху. Якщо раніше успішними людьми вважалися ті, хто володів власним житлом та автомобілем, то зараз в особливій пошані ті, хто вкладав гроші у досвід та враження: мандрівники, екстремали, стартапери.</p><p>Оглядач Atlantic Джеймс Гемблін пояснює феномен так: «За останні десять років психологи провели величезну кількість досліджень, що доводять, що з погляду щастя та відчуття благополуччя набагато вигідніше витрачати гроші на набуття нового досвіду, а не нових речей. Це приносить більше радості». Ось витяги із статті Гембліна: «Соціальна взаємодія між людьми має визначальне значення у питанні, чи будуть вони щасливими чи ні. Тож ви повинні розмовляти з іншими людьми та мати багато друзів». «Наші батьки не мали можливості подорожувати так дешево і так часто, як ми. Вони не мали можливості розважатися так, як зараз розважаємось ми. Їм було не так просто розпочати новий бізнес, як нам». Така вона, нова реальність, хочемо ми того чи ні. Тому наша компанія шукає реальних інвесторів, які готові вкладати в нерухомість у оригінальному значенні слова «інвестиція» – це запорука Вашого фінансового благополуччя, і незалежно від того, де Ви збираєтеся жити надалі і чим займатися, Ви будете отримувати ренту від Вашої нерухомості, досить привабливу для згаданого вище покоління, яке вже не хоче нічого купувати, крім портативного комп'ютера та телефону.</p><p>Найбільш популярним трендом використання нерухомості на сьогоднішній день є коворкінг, що являє собою оренду індивідуального місця біля пляжу, забезпеченого інтернетом та харчуванням. Проект нашої компанії є втіленням ідеї коворкінгу як за ціною будівництва, так і за можливістю насичення ними найбільш знецінених на сьогодні місць світу, так і найпрестижніших; це може бути будь-яке цікаве з точки зору середньостатистичного споживача місце, наприклад, грецькі острови та Афіни або Кіпр, це може бути Київ або Львів, це може бути Тбілісі або Москва, Віареджо або Стамбул, Флоренція або Відень, Тель-Авів або Чикаго.</p><p>Ми готові забезпечити місця проживання та коворкінгу молодих спеціалістів необхідними меблями та обладнанням, наситити їх предметами мистецтва та гарантувати сервіс, який складатиметься з необхідного мінімуму обслуговування місць проживання, включаючи роботи з обслуговування загальних територій, прибирання, обслуговування обладнання від домашньої до високотехнологічної техніки, необхідної для продуктивної роботи спеціаліста. Використовуючи наші зв'язки та досвід, компанія готова залучати спеціальне обладнання та сервіс для задоволення потреб працюючої та просто такої, що проводить час молоді.</p><p>Чому насамперед Кіпр? Тому що острів має м'який клімат, гостинне та неконфліктне населення, продуману податкову та резиденту політику та непогане географічне положення, що є рідкістю в сучасному світі, перенасиченому збройними та імміграційними конфліктами. Крім того, Кіпр – це православна країна, що знаходиться на кордоні християнського світу, що диктує толерантне ставлення до будь-яких світових релігій. І нарешті, Кіпр – це острів у Середземному морі, досить невеликий, щоб можна було його об'їхати на велосипеді за пару місяців перебування, необхідних для отримання резидентного статусу та наступної за цим можливості уникати, за бажання, подвійного оподаткування доходу від інтелектуальної діяльності, яка, до речі, на острові не просто шанована, а й оподатковується надзвичайно лояльно.</p><p>Наша компанія готова організувати консультації з усіх питань, що цікавлять, у вибраній Вами або будь-якій іншій консалтинговій, екаунтинговій та юридичній фірмі острова. Економіка проекту представлена в бізнес-плані і стосується в першу чергу продажу проекту цілком, але ми не бачимо в цьому жодної суперечності заявленому напрямку проекту – проект купується або цілком, або будь-якими частинами, навіть по половині квартири, що приносить дохід інвестору відповідно до розміру його інвестиції. Орієнтовні цифри прибутковості інвестиції можна оцінити як 10% на рік. Наприкінці представлення проекту хотілося б згадати про неймовірне зростання ціни оренди в Лімасолі за останні 5 років, що не може не вселяти надій господарям грамотно розташованого бюджетного житла Кіпру.</p></div></div>
