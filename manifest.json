@@ -15,8 +15,8 @@
       "purpose": "maskable"
     }
   ],
-  "start_url": "./index.html",
-  "scope": "./",
+  "start_url": "/Hermes-Management-and-Consulting-App/index.html",
+  "scope": "/Hermes-Management-and-Consulting-App/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000"
