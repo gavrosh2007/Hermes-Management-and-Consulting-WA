@@ -1,8 +1,8 @@
 const CACHE_NAME = 'hermes-v1';
 const urlsToCache = [
-  '/Hermes-Management-and-Consulting-App/index.html',
-  '/Hermes-Management-and-Consulting-App/icon-192x192.png',
-  '/Hermes-Management-and-Consulting-App/icon-512x512.png'
+  './index.html',
+  './icon-192x192.png',
+  './icon-512x512.png'
 ];
 
 self.addEventListener('install', (event) => {
@@ -10,10 +10,6 @@ self.addEventListener('install', (event) => {
     caches.open(CACHE_NAME).then((cache) => cache.addAll(urlsToCache))
   );
   self.skipWaiting();
-});
-
-self.addEventListener('activate', (event) => {
-  event.waitUntil(self.clients.claim());
 });
 
 self.addEventListener('fetch', (event) => {
