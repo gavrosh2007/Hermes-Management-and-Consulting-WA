@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700;800&display=swap&subset=greek" rel="stylesheet">
     
     <!-- PWA -->
-    <link rel="manifest" href="./manifest.json">
+    <link rel="manifest" href="/Hermes-Management-and-Consulting-App/manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Hermes MC">
@@ -17,75 +17,12 @@
     <meta name="theme-color" content="#c17b5a">
     
     <style>
-        /* ========== МАКСИМАЛЬНЫЙ BOLD ДЛЯ ВСЕХ ТЕКСТОВ НА ВСЕХ ЯЗЫКАХ ========== */
-        * {
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            text-rendering: optimizeLegibility;
+        /* ========== ЕДИНСТВЕННОЕ ИЗМЕНЕНИЕ: РАЗМЫТИЕ ФОНА ДЛЯ ЧИТАЕМОСТИ ========== */
+        body {
+            background-color: rgba(255, 255, 255, 0.6);
+            background-blend-mode: overlay;
         }
-        
-        /* ВСЕ текстовые элементы — максимальный bold 800 */
-        body, h1, h2, h3, h4, h5, h6, p, span, div, button, a, li, .text, 
-        .logo h1, .logo span, .epigraph p, .epigraph small, .hero h2, .hero p, 
-        .service-card h3, .service-card p, .service-tag, .creative-card h3, 
-        .art-link, .contact-item, footer span, .nav-btn, .big-btn, .install-note,
-        .tooltip-text, .pwa-icon-btn span, .contact-section h2, .video-section h3,
-        .video-card a, .video-card span, .order-card p, .art-showcase p,
-        .culinary-features .feature-item span, .close-btn {
-            font-weight: 800 !important;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            text-rendering: optimizeLegibility;
-            -webkit-text-stroke: 0.3px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Усиление контраста для всего текста */
-        body, .section, main, .hero, .service-card, .creative-card, .contact-section {
-            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
-        }
-        
-        /* Текст на светлом фоне с полупрозрачностью — дополнительное затемнение */
-        .hero p, .service-card p, .creative-card p, .epigraph p, .epigraph small {
-            color: #2a2a2a;
-            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.7);
-        }
-        
-        /* Заголовки на полупрозрачном фоне */
-        .hero h2, .service-card h3, .creative-card h3, .contact-section h2 {
-            color: #2c3e2a;
-            text-shadow: 0 1px 3px rgba(255, 255, 255, 0.6);
-        }
-        
-        /* Контактная информация */
-        .contact-item {
-            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
-        }
-        
-        /* Кнопки */
-        .big-btn, .art-link, .nav-btn {
-            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Текст в эпиграфе */
-        .epigraph p {
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 0.5px rgba(193, 123, 90, 0.5);
-            color: #b56a48;
-        }
-        
-        /* Греческий язык — дополнительное усиление */
-        body.lang-el * {
-            font-weight: 800 !important;
-            -webkit-text-stroke: 0.4px rgba(0, 0, 0, 0.15);
-        }
-        
-        /* Мобильная адаптация */
-        @media (max-width: 800px) {
-            body, p, span, li, div, button, a {
-                font-weight: 800 !important;
-                -webkit-text-stroke: 0.4px rgba(0, 0, 0, 0.12);
-            }
-        }
-        /* ========== КОНЕЦ ДОБАВЛЕННОГО ========== */
+        /* ========== КОНЕЦ ИЗМЕНЕНИЙ ========== */
         
         * {
             margin: 0;
@@ -98,8 +35,6 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            background-color: rgba(255, 255, 255, 0.4);
-            background-blend-mode: overlay;
             color: #3a2c2a;
             line-height: 1.6;
             min-height: 100vh;
@@ -127,12 +62,14 @@
         }
         .logo h1 {
             font-size: 2.8rem;
+            font-weight: 800;
             letter-spacing: 1px;
             color: #c17b5a;
             line-height: 1.2;
             text-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         .logo span {
+            font-weight: 700;
             font-size: 1.4rem;
             color: #b8a89a;
             letter-spacing: 0.5px;
@@ -170,6 +107,7 @@
             background: none;
             border: none;
             font-size: 1.2rem;
+            font-weight: 600;
             color: #5f4e47;
             cursor: pointer;
             padding: 0.5rem 1rem;
@@ -221,6 +159,8 @@
         .epigraph p {
             font-size: 1.8rem;
             color: #c17b5a;
+            font-weight: 700;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.1);
             letter-spacing: 0.5px;
         }
         .epigraph small {
@@ -228,6 +168,8 @@
             color: #c17b5a;
             display: block;
             margin-top: 0.5rem;
+            font-weight: 700;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
         }
         .hero {
             text-align: center;
@@ -239,14 +181,18 @@
         }
         .hero h2 {
             font-size: 3rem;
+            font-weight: 700;
             color: #4a3f3a;
             margin-bottom: 1rem;
+            text-shadow: 0 1px 3px rgba(255,255,255,0.5);
         }
         .hero p {
             font-size: 1.4rem;
             color: #7f6e64;
             max-width: 600px;
             margin: 0 auto 2rem;
+            font-weight: 700;
+            text-shadow: 0 1px 3px rgba(255,255,255,0.3);
         }
         .services-grid {
             display: grid;
@@ -270,13 +216,17 @@
         }
         .service-card h3 {
             font-size: 1.8rem;
+            font-weight: 700;
             color: #c17b5a;
             margin-bottom: 1rem;
+            text-shadow: 0 1px 2px rgba(255,255,255,0.3);
         }
         .service-card p {
             color: #6d5c53;
             margin-bottom: 1.5rem;
+            font-weight: 700;
             font-size: 1.3rem;
+            text-shadow: 0 1px 2px rgba(255,255,255,0.3);
         }
         .service-tag {
             display: inline-block;
@@ -285,6 +235,7 @@
             border-radius: 40px;
             font-size: 1.1rem;
             color: #c17b5a;
+            font-weight: 700;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
         .video-card {
@@ -308,16 +259,20 @@
         }
         .video-card a {
             color: #3a2c2a;
+            font-weight: 700;
             font-size: 1.2rem;
             text-decoration: none;
             border-bottom: 1px dotted;
+            text-shadow: 0 1px 2px rgba(255,255,255,0.5);
         }
         .video-section {
             margin-top: 3rem;
         }
         .video-section h3 {
             color: #c17b5a;
+            font-weight: 700;
             font-size: 1.6rem;
+            text-shadow: 0 1px 3px rgba(255,255,255,0.3);
         }
         .creative-cards {
             display: grid;
@@ -336,6 +291,7 @@
             font-size: 2rem;
             color: #c17b5a;
             margin-bottom: 1rem;
+            font-weight: 700;
             text-align: center;
         }
 
@@ -365,6 +321,7 @@
             justify-content: center;
             text-align: center;
             color: #3a2c2a;
+            font-weight: 700;
             font-size: 1.2rem;
             padding: 0.5rem;
             background-color: #f0e4d8;
@@ -435,6 +392,7 @@
             padding: 0.8rem 2rem;
             border-radius: 40px;
             text-decoration: none;
+            font-weight: 700;
             font-size: 1.2rem;
             transition: background 0.3s;
             border: 1px solid rgba(255,255,255,0.3);
@@ -455,6 +413,7 @@
         }
         .order-card p {
             font-size: 1.2rem;
+            font-weight: 600;
             margin-bottom: 1rem;
             color: #3a2c2a;
         }
@@ -470,6 +429,7 @@
             box-shadow: 0 10px 20px rgba(193, 123, 90, 0.3);
             display: inline-block;
             margin: 0.5rem;
+            font-weight: 700;
             text-decoration: none;
         }
         .big-btn:hover {
@@ -515,6 +475,7 @@
             padding: 1.5rem 3rem;
             border-radius: 80px;
             font-size: 2rem;
+            font-weight: 700;
             color: #3a2c2a;
             text-align: center;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
@@ -610,6 +571,7 @@
         .contact-item {
             font-size: 1.3rem;
             color: #5f4e47;
+            font-weight: 700;
             background: rgba(255,255,255,0.6);
             padding: 0.8rem 1.5rem;
             border-radius: 60px;
@@ -631,13 +593,17 @@
             background: transparent;
             border: none;
             box-shadow: none;
+            font-weight: 800;
             font-size: 1.4rem;
+            text-shadow: 0 1px 4px rgba(255,255,255,0.8);
         }
         footer {
             text-align: center;
             padding: 2rem;
             color: #b8a89a;
             font-size: 1.2rem;
+            font-weight: 800;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.2);
         }
         @media (max-width: 800px) {
             header {
@@ -681,6 +647,7 @@
             transition: transform 0.2s;
             gap: 0.3rem;
             font-size: 0.9rem;
+            font-weight: 600;
             color: #2c5a3e;
         }
         .pwa-icon-btn img {
@@ -737,6 +704,7 @@
         .install-note {
             margin-top: 0.5rem;
             color: #2c2c2c;
+            font-weight: 600;
         }
         @media (max-width: 768px) {
             .tooltip-text {
@@ -920,14 +888,14 @@
         <!-- КОНТАКТЫ -->
         <section id="contact" class="section">
             <div class="contact-section">
-                <h2 style="font-size: 2.5rem; color: #c17b5a;" data-i18n="contact_title">Свяжитесь с нами</h2>
+                <h2 style="font-size: 2.5rem; font-weight: 300; color: #c17b5a;" data-i18n="contact_title">Свяжитесь с нами</h2>
                 <div class="contact-info">
                     <div class="contact-row">
                         <a href="tel:+35799453575" class="contact-item">📞 +357 99 453575</a>
                         <a href="tel:+35799486511" class="contact-item">📞 +357 99 486511</a>
                         <a href="https://wa.me/35799453575" target="_blank" class="contact-item">💬 WhatsApp +357 99 453575</a>
                         <a href="https://wa.me/35799486511" target="_blank" class="contact-item">💬 WhatsApp +357 99 486511</a>
-                        <span class="contact-item" style="background: transparent; border: none; font-size: 1.4rem;">Viber: +357 99 453575, +357 99 486511</span>
+                        <span class="contact-item" style="background: transparent; border: none; font-weight: 800; font-size: 1.4rem; text-shadow: 0 1px 4px rgba(255,255,255,0.8);">Viber: +357 99 453575, +357 99 486511</span>
                     </div>
                     <div class="contact-row">
                         <a href="mailto:gavrosh2007@gmail.com" class="contact-item">✉️ gavrosh2007@gmail.com</a>
@@ -940,7 +908,7 @@
                         <a href="https://t.me/RBartsalonBot" target="_blank" class="contact-item">🤖 @RBartsalonBot</a>
                     </div>
                 </div>
-                <p style="margin-top: 2rem; color: #7f6e64; font-size: 1.3rem;" data-i18n="contact_note">Мы открыты для диалога и новых проектов.</p>
+                <p style="margin-top: 2rem; color: #7f6e64; font-size: 1.3rem; font-weight: 700; text-shadow: 0 1px 3px rgba(255,255,255,0.5);" data-i18n="contact_note">Мы открыты для диалога и новых проектов.</p>
             </div>
         </section>
     </main>
@@ -1404,13 +1372,29 @@
         })();
     </script>
 
-    <!-- PWA service worker регистрация -->
+    <!-- PWA service worker регистрация с принудительным перехватом -->
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('sw.js')
-                .then(reg => console.log('SW registered:', reg))
-                .catch(err => console.log('SW reg failed:', err));
+            navigator.serviceWorker.register('/Hermes-Management-and-Consulting-App/sw.js')
+                .then(() => console.log('SW registered'))
+                .catch(err => console.log('SW error:', err));
         }
+        
+        // Принудительная установка через меню Chrome
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            const btn = document.getElementById('pwa-install-icon');
+            if (btn) btn.style.display = 'inline-flex';
+        });
+        
+        document.getElementById('pwa-install-icon')?.addEventListener('click', async () => {
+            if (!deferredPrompt) return;
+            deferredPrompt.prompt();
+            await deferredPrompt.userChoice;
+            deferredPrompt = null;
+        });
     </script>
 </body>
 </html>
